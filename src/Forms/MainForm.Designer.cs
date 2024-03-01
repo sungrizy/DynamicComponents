@@ -1,4 +1,4 @@
-﻿namespace DynamicComponents;
+﻿namespace DynamicComponents.Forms;
 
 partial class Form1
 {
@@ -28,11 +28,32 @@ partial class Form1
     /// </summary>
     private void InitializeComponent()
     {
-        this.components = new System.ComponentModel.Container();
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Text = "Form1";
+        MainButton = new Button();
+        SuspendLayout();
+        // 
+        // MainButton
+        // 
+        MainButton.Location = new Point(12, 12);
+        MainButton.Name = "MainButton";
+        MainButton.Size = new Size(310, 89);
+        MainButton.TabIndex = 0;
+        MainButton.Text = "Click me";
+        MainButton.UseVisualStyleBackColor = true;
+        MainButton.Click += MainButton_Click;
+        // 
+        // Form1
+        // 
+        AutoScaleDimensions = new SizeF(7F, 15F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(346, 485);
+        Controls.Add(MainButton);
+        Name = "Form1";
+        Text = "Form1";
+        Load += Form1_Load;
+        ResumeLayout(false);
     }
 
     #endregion
+
+    private Button MainButton;
 }
